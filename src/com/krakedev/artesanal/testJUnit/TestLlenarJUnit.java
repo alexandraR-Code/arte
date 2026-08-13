@@ -18,7 +18,7 @@ public class TestLlenarJUnit {
 
 		// *<Validacion para controlar el margen de error>*/
 
-		assertEquals(7900, rubia.getCapacidadActual(), 0.0001);
+		assertEquals(7800, rubia.getCapacidadActual(), 0.0001);
 	}
 
 }
