@@ -9,6 +9,7 @@ public class Maquina {
 	private double precioPorML;
 	private double capacidadMaxima;
 	private double cantidadActual;
+	private String codigo;
 
 	/* <Metodos getter y setter > */
 	public String getNombreCerveza() {
@@ -48,26 +49,29 @@ public class Maquina {
 	public void imprimir() {
 		String mensaje;
 		mensaje = "Nombre cerveza: " + nombreCerveza + " , Descripción: " + descripcion + " ,  Precio por ML: "
-				+ precioPorML + "  , Capacidad máxima: " + capacidadMaxima + " , Cantidad actual: " + cantidadActual;
+				+ precioPorML + "  , Capacidad máxima: " + capacidadMaxima + " , Cantidad actual: " + cantidadActual
+				+ "Código: " + codigo;
 		System.out.println(mensaje);
 	}
 	// *< constructor que es un molde que define que mostrar >*/
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorML, double capacidadMaxima) {
+	public Maquina(String nombreCerveza, String descripcion, double precioPorML, double capacidadMaxima, String codigo) {
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
 		this.precioPorML = precioPorML;
 		this.capacidadMaxima = capacidadMaxima;
 		this.cantidadActual = 0;
+		this.codigo = codigo;
 	}
 
 	// */<otro constructor el quepuede definir que quiere mostar >*/
-	public Maquina(String nombreCerveza, String descripcion, double precioPorML) {
+	public Maquina(String nombreCerveza, String descripcion, double precioPorML, String codigo) {
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
 		this.precioPorML = precioPorML;
 		this.capacidadMaxima = 10000;
 		this.cantidadActual = 0;
+		this.codigo = codigo;
 	}
 
 	// *<metodo para llenar maquina>*/
@@ -100,6 +104,12 @@ public class Maquina {
 		}else {
 			return 0;
 		}
+	}
+	
+	/*Metodos getter  del atributo codigo*/
+
+	public String getCodigo() {
+		return codigo;
 	}
 	
 

@@ -12,7 +12,7 @@ public class TestLlenarJUnit {
 
 	public void testLlenarMaquina() {
 
-		Maquina rubia = new Maquina("Pilsener", "Cerveza fria", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza fria", 0.02, 8000, "maquinaIpa");
 
 		rubia.llenarMaquina();
 

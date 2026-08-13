@@ -12,7 +12,7 @@ public class TestRecargarJUnit {
 
 	@Test
 	public void testRecaragaExitosa() {
-		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000, "maquinaIpa");
 		boolean resulatdo = rubia.recargarCerveza(3000);
 		assertTrue(resulatdo);
 		assertEquals(3000, rubia.getCapacidadActual(), 0.0001);
@@ -20,7 +20,7 @@ public class TestRecargarJUnit {
 
 	@Test
 	public void testRecargaFallidaPorDesborde() {
-	    Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000);
+	    Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000, "maquinaStout");
 	    negra.recargarCerveza(7000);
 	    boolean resultado = negra.recargarCerveza(2000); // 7000+2000=9000 > 8000 → debe fallar
 	    assertFalse(resultado);

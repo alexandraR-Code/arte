@@ -30,7 +30,7 @@ public class TestServirCervezaAI {
 		// Caso: la maquina tiene mas cerveza disponible que la cantidad solicitada.
 		// Se espera que el servicio sea exitoso, que se descuente la cantidad de la
 		// cantidad actual y que se retorne el valor a pagar (cantidad * precioPorML).
-		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000, "maquinaIpa");
 		rubia.recargarCerveza(5000); // cantidadActual = 5000
 
 		double valorPagar = rubia.servirCerveza(2000);
@@ -44,7 +44,7 @@ public class TestServirCervezaAI {
 		// Caso limite: se solicita servir exactamente la cantidad que hay disponible.
 		// Debe ser exitoso, dejar la cantidad actual en 0 y retornar el valor a pagar
 		// correspondiente a toda la cantidad servida.
-		Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000);
+		Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000, "maquinaIpa");
 		negra.recargarCerveza(1000); // cantidadActual = 1000
 
 		double valorPagar = negra.servirCerveza(1000);
@@ -58,7 +58,7 @@ public class TestServirCervezaAI {
 		// Caso: se solicita servir mas cerveza de la que hay disponible.
 		// No debe servir nada, la cantidad actual no debe modificarse y debe
 		// retornar 0 como valor a pagar.
-		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000, "maquinaIpa");
 		rubia.recargarCerveza(1000); // cantidadActual = 1000
 
 		double valorPagar = rubia.servirCerveza(1500); // pide mas de lo disponible
@@ -72,7 +72,7 @@ public class TestServirCervezaAI {
 		// Caso: la maquina no tiene cerveza cargada (cantidadActual = 0, valor por
 		// defecto de los constructores). Cualquier solicitud mayor a 0 debe fallar,
 		// retornando 0 y sin modificar la cantidad actual.
-		Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000);
+		Maquina negra = new Maquina("Club", "Cerveza fria", 0.03, 8000, "maquinaIpa");
 		// No se recarga la maquina, cantidadActual sigue en 0
 
 		double valorPagar = negra.servirCerveza(500);
@@ -86,7 +86,7 @@ public class TestServirCervezaAI {
 		// Caso: se usa el constructor de 3 parametros (capacidad maxima por defecto
 		// = 10000). Se recarga la maquina y se sirve una cantidad valida, validando
 		// que el calculo del valor a pagar use correctamente el precioPorML definido.
-		Maquina artesanal = new Maquina("Golden Ale", "Cerveza artesanal dorada", 0.05);
+		Maquina artesanal = new Maquina("Golden Ale", "Cerveza artesanal dorada", 0.05, "maquinaIpa");
 		artesanal.recargarCerveza(4000); // cantidadActual = 4000
 
 		double valorPagar = artesanal.servirCerveza(1500);
@@ -101,7 +101,7 @@ public class TestServirCervezaAI {
 		// cerveza (cantidadActual >= 0 siempre se cumple si hay algo cargado o no),
 		// el servicio "exitoso" no modifica la cantidad actual y el valor a pagar
 		// debe ser 0 (0 * precioPorML = 0).
-		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza", 0.02, 8000, "maquinaIpa");
 		rubia.recargarCerveza(3000); // cantidadActual = 3000
 
 		double valorPagar = rubia.servirCerveza(0);
